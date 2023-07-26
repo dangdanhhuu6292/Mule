@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<flow name="mule-event-headerFlow" doc:id="feda3a17-e94e-458d-bca5-85f0b2c910b0" >
+		<http:listener doc:name="Listener" doc:id="9305457a-3319-4413-9451-ea444f58e7ff" config-ref="HTTP_Listener_config" path="mule_event_header"/>
+		<logger level="INFO" doc:name="Logger" doc:id="61338838-f891-4d92-a910-bdc973cc45d9" message="#[attributes.headers.studentName]"/>
+	</flow>
+</mule>
